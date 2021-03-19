@@ -1,0 +1,210 @@
+* {
+  /* 	Pour Info
+  La valeur la plus haute dans les propriétés du CSS après c'est le body ! */
+}
+
+body {
+  background-color: black;
+  margin: 0;
+  padding: 0;
+}
+
+/* La taille 800px est à titre d'exemple juste plus façile pendant le developpement */
+@media only screen and (min-width: 800px) and (max-width: 1440px) {
+  #article2 {
+    background-color: azure;
+    display: grid;
+    /*
+	On peut écrire ce code de plusieurs instruction
+	grid-template-columns: 250px 250px 250px 250px; //valeur fixe non responsive
+	grid-template-columns: 25% 25% 25% 25%; //s'adapate aux responsive sans grid-column-gap
+	grid-template-columns: 1fr 1fr 1fr 1fr; // 100% responsive
+	On peut mixer les valeur entre auto or % or px or fr (fraction)
+	*/
+    grid-template-columns: repeat(4, 1fr);
+    /*
+	On peut écrire ce code de plusieurs instruction
+	grid-template-rows: 300px 300px; 	//valeur fixe non responsive
+	grid-template-rows: 50% 300px; 		//s'adapate aux responsive hors gap
+	grid-template-rows: 1fr 1fr; 				//100% responsive
+	On peut mixer les valeur entre auto or % or px or fr (fraction)
+	Si il reste des blocs ils s'implemente automatique selon l'instruction
+	*/
+    grid-template-rows: repeat(2, 1fr);
+    /* Créer un espace entre chaque bloc grid entre les columns
+	peut être intressant pour remplacer toutes les margins des blocs contenu .class */
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    /* Ses mots clefs sont accepter aussi avec le grid
+	justify-content | align-content | align-items | justify-items |
+	*/
+    width: auto;
+    max-height: 400px;
+    padding: 20px;
+    margin: 4px;
+  }
+
+  .card1 {
+    background-color: cadetblue;
+    border: 1px solid black;
+    border-radius: 10px;
+    color: azure;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    /* Ses mots clefs sont accepter aussi sur le conteneur
+	align-self | justify-self
+	*/
+    padding: 20px;
+  }
+
+  .card2 {
+    background-color: chartreuse;
+    border: 1px solid black;
+    border-radius: 10px;
+    color: azure;
+    grid-row-start: 1;
+    /*
+	grid-row-end: span 1; est son équivalence
+	span 1 = occupe 1 ligne de grill
+	*/
+    grid-row-end: 2;
+  }
+
+  .card3 {
+    background-color: chocolate;
+    border: 1px solid black;
+    border-radius: 10px;
+    color: azure;
+    /*
+	grid-row: 2 / span 1;
+	grid-row: 2 / 3;
+	Cette instruction est son équivalence*/
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+
+  .card4 {
+    background-color: chartreuse;
+    border: 1px solid black;
+    border-radius: 10px;
+    color: azure;
+    grid-row-start: 1;
+    /* Voici l'exemple en span fonctionne pareil que la card 1*/
+    grid-row-end: span 2;
+  }
+
+  .card5 {
+    background-color: cadetblue;
+    border: 1px solid black;
+    border-radius: 10px;
+    color: azure;
+    /* grid-row-start: 1;
+    grid-row-end: 2; */
+    grid-row: 1 / 2;
+  }
+
+  .card6 {
+    background-color: chocolate;
+    border: 1px solid black;
+    border-radius: 10px;
+    color: azure;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+
+  .image {
+    background-color: darkmagenta;
+    width: auto;
+    height: 300px;
+  }
+
+  .imageLitle {
+    background-color: darkmagenta;
+    width: auto;
+    height: 100px;
+  }
+  .text {
+    margin-left: 20px;
+  }
+}
+
+/* La taille 800px est à titre d'exemple */
+@media only screen and (max-width: 800px) {
+  #article2 {
+    background-color: azure;
+    display: grid;
+    width: auto;
+    padding: 20px;
+    margin: 4px;
+  }
+
+  /* On peut aussi de façon global controler le contenu
+  #article2 div {
+    text-align: center;
+  }
+  */
+  .card1 {
+    background-color: cadetblue;
+    border: 1px solid black;
+    border-radius: 10px;
+    color: azure;
+    padding: 20px;
+    margin: 10px;
+  }
+
+  .card2 {
+    background-color: chartreuse;
+    border: 1px solid black;
+    border-radius: 10px;
+    color: azure;
+    margin: 10px;
+  }
+
+  .card3 {
+    background-color: chocolate;
+    border: 1px solid black;
+    border-radius: 10px;
+    color: azure;
+    margin: 10px;
+  }
+
+  .card4 {
+    background-color: chartreuse;
+    border: 1px solid black;
+    border-radius: 10px;
+    color: azure;
+    margin: 10px;
+  }
+
+  .card5 {
+    background-color: cadetblue;
+    border: 1px solid black;
+    border-radius: 10px;
+    color: azure;
+    margin: 10px;
+  }
+
+  .card6 {
+    background-color: chocolate;
+    border: 1px solid black;
+    border-radius: 10px;
+    color: azure;
+    margin: 10px;
+  }
+
+  .image {
+    background-color: darkmagenta;
+    width: auto;
+    height: 100px;
+  }
+
+  .imageLitle {
+    background-color: darkmagenta;
+    width: auto;
+    height: 100px;
+  }
+
+  .text {
+    margin-left: 20px;
+  }
+}
